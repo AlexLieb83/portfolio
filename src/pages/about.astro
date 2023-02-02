@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Alex Liebhaber"
+  description="About Alex Liebhaber Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="I appreciate you stopping by. Read below to learn more about me."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/banner.jpg"
+          alt="Alex Liebhaber at work with a colleague"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            My name is Alex. I am a driven and detail-oriented individual with a
+            passion for web development. I have always been fascinated by the
+            endless possibilities of the internet and the power it holds to
+            bring ideas to life. With a background in management, I have honed
+            my skills in problem solving and team management, which has proven
+            to be invaluable in my web development journey.
+          </p>
+          <br />
+          <p>
+            I am constantly seeking new challenges and opportunities to expand
+            my skill set and stay ahead of the curve in the ever-evolving world
+            of web development. Whether it's building a dynamic website from
+            scratch or collaborating with a team to bring a client's vision to
+            life, I am always eager to take on new projects and bring my
+            expertise to the table. My goal is to continue to grow as a
+            developer and provide top-notch solutions for my clients.
+          </p>
+          <br />
+          <p>
+            In my free time, you can find me exploring new technologies, reading
+            about web development trends, or tinkering with code to bring my
+            latest ideas to life. I am always open to learning and love the
+            fast-paced nature of this field.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>
+            Bachelor of Science in Psychology | Minor in Computer Information
+            Technologies from Arkansas State University
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <p>officia unde omnis</p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
